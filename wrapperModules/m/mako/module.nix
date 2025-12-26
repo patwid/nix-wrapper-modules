@@ -50,6 +50,12 @@ in
   # mako doesnt like fixupPhase
   config.drv.dontFixup = true;
 
+  config.filesToPatch = [
+    "share/dbus-1/services/fr.emersion.mako.service"
+    "share/systemd/user/mako.service"
+    "lib/systemd/user/mako.service"
+  ];
+
   config.package = lib.mkDefault pkgs.mako;
 
   config.meta.maintainers = [ wlib.maintainers.birdee ];
